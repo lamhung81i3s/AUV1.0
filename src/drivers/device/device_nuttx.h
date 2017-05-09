@@ -130,7 +130,31 @@ public:
 	 */
 	virtual int	ioctl(unsigned operation, unsigned &arg);
 
+<<<<<<< HEAD
 	/** Device bus types for DEVID */
+||||||| merged common ancestors
+	/*
+	  device bus types for DEVID
+	 */
+=======
+	/**
+	 * Return the bus ID the device is connected to.
+	 *
+	 * @return The bus ID
+	 */
+	virtual uint8_t get_device_bus() {return _device_id.devid_s.bus;};
+
+	/**
+	 * Return the bus address of the device.
+	 *
+	 * @return The bus address
+	 */
+	virtual uint8_t get_device_address() {return _device_id.devid_s.address;};
+
+	/*
+	  device bus types for DEVID
+	 */
+>>>>>>> a2ca6667d286be4e884df61d7067b1ad4489c08f
 	enum DeviceBusType {
 		DeviceBusType_UNKNOWN = 0,
 		DeviceBusType_I2C     = 1,

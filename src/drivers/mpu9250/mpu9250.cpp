@@ -168,17 +168,29 @@ MPU9250::MPU9250(device::Device *interface, device::Device *mag_interface, const
 
 	/* Set device parameters and make sure parameters of the bus device are adopted */
 	_device_id.devid_s.devtype = DRV_ACC_DEVTYPE_MPU9250;
+<<<<<<< HEAD
 	_device_id.devid_s.bus_type = (device::Device::DeviceBusType)_interface->get_device_bus_type();
 	_device_id.devid_s.bus = _interface->get_device_bus();
 	_device_id.devid_s.address = _interface->get_device_address();
+||||||| merged common ancestors
+=======
+	_device_id.devid_s.bus = _interface->get_device_bus();;
+	_device_id.devid_s.address = _interface->get_device_address();;
+>>>>>>> a2ca6667d286be4e884df61d7067b1ad4489c08f
 
 	/* Prime _gyro with parents devid. */
 	/* Set device parameters and make sure parameters of the bus device are adopted */
 	_gyro->_device_id.devid = _device_id.devid;
 	_gyro->_device_id.devid_s.devtype = DRV_GYR_DEVTYPE_MPU9250;
+<<<<<<< HEAD
 	_gyro->_device_id.devid_s.bus_type = _interface->get_device_bus_type();
 	_gyro->_device_id.devid_s.bus = _interface->get_device_bus();
 	_gyro->_device_id.devid_s.address = _interface->get_device_address();
+||||||| merged common ancestors
+=======
+	_gyro->_device_id.devid_s.bus = _interface->get_device_bus();
+	_gyro->_device_id.devid_s.address = _interface->get_device_address();
+>>>>>>> a2ca6667d286be4e884df61d7067b1ad4489c08f
 
 	/* Prime _mag with parents devid. */
 	_mag->_device_id.devid = _device_id.devid;

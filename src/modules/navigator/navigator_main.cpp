@@ -668,11 +668,25 @@ Navigator::start()
 
 	/* start the task */
 	_navigator_task = px4_task_spawn_cmd("navigator",
+<<<<<<< HEAD
 					     SCHED_DEFAULT,
 					     SCHED_PRIORITY_DEFAULT + 5,
 					     1600,
 					     (px4_main_t)&Navigator::task_main_trampoline,
 					     nullptr);
+||||||| merged common ancestors
+					 SCHED_DEFAULT,
+					 SCHED_PRIORITY_DEFAULT + 5,
+					 1300,
+					 (px4_main_t)&Navigator::task_main_trampoline,
+					 nullptr);
+=======
+					 SCHED_DEFAULT,
+					 SCHED_PRIORITY_DEFAULT + 5,
+					 1500,
+					 (px4_main_t)&Navigator::task_main_trampoline,
+					 nullptr);
+>>>>>>> a2ca6667d286be4e884df61d7067b1ad4489c08f
 
 	if (_navigator_task < 0) {
 		warn("task start failed");
